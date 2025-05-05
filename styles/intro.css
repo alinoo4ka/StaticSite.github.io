@@ -182,3 +182,16 @@ body {
     }
 }
 
+/* Добавьте эти стили в конец файла intro.css */
+.sidebar-footer .telegram-link {
+    color: #1a73e8 !important;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.sidebar-footer .action-button {
+    background-color: #1a73e8 !important;
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none !important;
+}
