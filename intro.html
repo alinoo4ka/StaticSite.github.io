@@ -1,55 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Введение | RimTUB Docs</title>
-    <link rel="stylesheet" href="styles/intro.css">
+    <title>Simple WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        button { padding: 10px 15px; background: #0088cc; color: white; border: none; border-radius: 5px; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-top">
-                <h1>RimTUB Docs</h1>
-                <div class="breadcrumbs">
-                    <a href="index.html">docs.rimtub.pp.ua</a> / 
-                    <a href="intro.html">docs/intro</a>
-                </div>
-            </div>
-            <nav class="navbar">
-                <a href="#">Docs</a>
-                <a href="#">Tutorial</a>
-                <a href="#">Community</a>
-            </nav>
-        </header>
+    <h1>Мой WebApp</h1>
+    <p>Нажмите кнопку, чтобы отправить данные боту:</p>
+    <button onclick="sendData()">Отправить данные</button>
 
-        <div class="content-wrapper">
-            <aside class="sidebar">
-                <h3>Документация по модулям RimTUB</h3>
-                <ul>
-                    <li><a href="intro.html" class="active">Введение</a></li>
-                    <li><a href="#">Установка</a></li>
-                    <li><a href="#">Создание модуля</a></li>
-                    <li><a href="#">API Reference</a></li>
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="https://t.me/rimtub" class="telegram-link" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">Телеграм канал 💬</a>
-                    <a href="index.html" class="action-button" style="background-color: #1a73e8; color: white; font-weight: bold; display: block; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none;">На главную</a>
-                </div>
-            </aside>
-
-            <main class="main-content">
-                <h2>Введение</h2>
-                <div class="version">Версия: 2.2.2-1</div>
-                
-                <article>
-                    <h3>Документация для разработчиков</h3>
-                    <p>Разработчики могут писать свои модули для RimTUB. Тут будет вся необходимая информация.</p>
-                    
-                    <p>Модуль — это отдельный компонент, который расширяет функционал ювербота, добавляя ему новые команды и возможности. Каждый модуль обычно отвечает за выполнение конкретной задачи, будь то автоматизация действий, интеграция с внешними сервисами, управление сообщениями или предоставление информации. Модули легко добавляются и удаляются, что...</p>
-                </article>
-            </main>
-        </div>
-    </div>
+    <script>
+        function sendData() {
+            Telegram.WebApp.sendData("Данные из WebApp!");
+            Telegram.WebApp.close();
+        }
+    </script>
 </body>
 </html>
