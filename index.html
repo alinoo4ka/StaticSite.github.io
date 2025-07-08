@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Сайт с Фиксированным Хедером</title>
+    <title>Вика | Сборник полезных материалов</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <style>
+        /* Временные inline-стили для демонстрации */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--header-text);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--header-text);
+        }
+        
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Адаптивные колонки */
+        .multi-column {
+            column-width: 350px;
+            column-gap: 3rem;
+        }
+        
+        /* Кнопка */
+        .guide-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Мобильная адаптация */
+        @media (max-width: 768px) {
+            .content-block {
+                padding: 1.5rem 0.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .multi-column {
+                columns: 1;
+            }
+            
+            .guide-button {
+                display: block;
+                text-align: center;
+                margin: 1.5rem auto 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,44 +109,37 @@
     </header>
     
     <main class="container">
-        <section class="section">
-            <div class="content">
-                <h2>Добро пожаловать!</h2>
-                <p>Данный сайт - своеобразный сборник разной информации, которую я лично вручную сюда добавляла самостоятельно.</p>
-                <p>Прокрутите вниз, там снизу будет кнопка "к гайдам". Там и будет всё! спасибо за посещение сайта.</p>
+        <section class="content-block">
+            <h2>Добро пожаловать!</h2>
+            <div class="multi-column">
+                <p>Данный сайт — мой личный сборник полезной информации, которую я тщательно собираю и проверяю.</p>
+                <p>Здесь вы найдете гайды, заметки и полезные ресурсы по веб-разработке. Нажмите кнопку ниже, чтобы перейти к материалам.</p>
+            </div>
+            <a href="guides-list.html" class="guide-button">К гайдам →</a>
+        </section>
+        
+        <section class="content-block">
+            <h2>Обо мне</h2>
+            <div class="multi-column">
+                <p><strong>Имя:</strong> Виктория</p>
+                <p><strong>Род деятельности:</strong> Начинающий веб-разработчик</p>
+                <p><strong>О проекте:</strong> Это мой первый сайт, где я собираю и систематизирую полезные знания.</p>
             </div>
         </section>
         
-        <section class="section">
-            <div class="content">
-                <h2>Обо мне</h2>
-                <p>Имя: Виктория</p>
-                <p>Начинающая веб-программист(ка)?</p>
-                <p>Данный сайт - мой первый проект.</p>
-            </div>
-        </section>
-        
-        <section class="section">
-            <div class="content">
-                <h2>Чему хочу научиться:</h2>
-                <ul>
-                    <li>Веб-разработка (приложения, сайты красивее этого)</li>
-                    <li>Дизайн интерфейсов (очень красивые менюшки как у всех крутых сайтов!)</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="content">
-                <h2>Полезные материалы</h2>
-                <p>Здесь будут собраны все мои гайды и полезные находки:</p>
-                <a href="guides-list.html" class="guide-button">К гайдам →</a>
-            </div>
+        <section class="content-block">
+            <h2>Чему хочу научиться</h2>
+            <ul class="multi-column">
+                <li>Создавать современные веб-приложения</li>
+                <li>Проектировать удобные интерфейсы</li>
+                <li>Работать с современными фреймворками</li>
+                <li>Оптимизировать производительность сайтов</li>
+            </ul>
         </section>
     </main>
     
     <footer>
-        <p>© 2025 Создатель и действующий владелец: Вика (tg: @VikkiDevPy). Все права защищены.</p>
+        <p>© 2025 Вика (tg: @VikkiDevPy) | Все права защищены</p>
     </footer>
 
     <script src="scripts/main.js"></script>
