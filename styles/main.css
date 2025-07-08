@@ -1,0 +1,166 @@
+/* Основные стили структуры */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: var(--button-shadow);
+    transition: all 0.3s ease;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+    transition: opacity 0.3s, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    position: absolute;
+}
+
+.icon-sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.content {
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p, li {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    header {
+        height: 70px;
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Стили для кнопки "К гайдам" */
+.guide-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Анимация "В разработке" */
+.coming-soon {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Стиль для кнопки "На главную" */
+.guide-button[href="index.html"] {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: transparent;
+    border: 2px solid var(--header-bg);
+    color: var(--header-bg);
+}
+
+.guide-button[href="index.html"]:hover {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}

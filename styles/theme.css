@@ -1,0 +1,112 @@
+/* Светлая тема (по умолчанию) */
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --header-bg: #4a76a8;
+    --header-text: #fff;
+    --icon-primary: #ffd43b;
+    --icon-secondary: #f8f9fa;
+    --icon-hover: #ffec99;
+    --content-bg: rgba(255, 255, 255, 0.7);
+    --footer-bg: #4a76a8;
+    /* Тени для светлой темы */
+    --content-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --button-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    --button-hover-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Темная тема */
+.dark-theme {
+    --bg-color: #1a1a2e;
+    --text-color: #e6e6ff;
+    --header-bg: #0f3460;
+    --header-text: #e6e6ff;
+    --icon-primary: #ffd43b;
+    --icon-secondary: #1a1a2e;
+    --icon-hover: #fff9db;
+    --content-bg: rgba(26, 26, 46, 0.7);
+    --footer-bg: #0f3460;
+    /* Тени для темной темы - светлые с прозрачностью */
+    --content-shadow: 0 5px 15px rgba(255, 255, 255, 0.08);
+    --header-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    --button-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    --button-hover-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.5s, color 0.5s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    box-shadow: var(--header-shadow);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+    box-shadow: var(--button-hover-shadow);
+}
+
+.icon-sun {
+    fill: var(--icon-primary);
+}
+
+.icon-moon {
+    fill: var(--icon-primary);
+}
+
+.dark-theme .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.dark-theme .icon-moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.content {
+    background: var(--content-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--content-shadow);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--header-text);
+}
+
+/* Цвета кнопки для тем */
+.guide-button {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    box-shadow: var(--button-shadow);
+}
+
+.guide-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--button-hover-shadow);
+    background-color: var(--icon-primary);
+    color: var(--header-bg);
+}
+
+/* Фон для заглушки */
+.coming-soon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Цвета кнопки "На главную" для темной темы */
+.dark-theme .guide-button[href="index.html"] {
+    border-color: var(--icon-primary);
+    color: var(--icon-primary);
+}
+
+.dark-theme .guide-button[href="index.html"]:hover {
+    background-color: var(--icon-primary);
+    color: var(--header-bg);
+}
