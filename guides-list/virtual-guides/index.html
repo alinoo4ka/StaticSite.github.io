@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровые гайды</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .guide-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .guide-category-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            min-height: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .guide-category-button .button-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .guide-category-button .button-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .guide-category-button .button-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            z-index: 2;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .guide-category-button .button-content p {
+            font-size: 1rem;
+            opacity: 0.9;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .guide-category-button .button-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.15);
+            clip-path: polygon(0 40%, 100% 20%, 100% 100%, 0% 100%);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        /* Зеленая кнопка для Игр */
+        .guide-category-button.games {
+            background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+        }
+
+        .guide-category-button.games:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(67, 160, 71, 0.4);
+        }
+
+        /* Красная кнопка для Приложений */
+        .guide-category-button.apps {
+            background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
+        }
+
+        .guide-category-button.apps:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(229, 57, 53, 0.4);
+        }
+
+        /* Оранжевая кнопка для Программирования */
+        .guide-category-button.programming {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+
+        .guide-category-button.programming:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.4);
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 600px) {
+            .guide-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .guide-category-button {
+                padding: 20px;
+            }
+            
+            .guide-category-button .button-icon {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+            
+            .guide-category-button .button-icon svg {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .guide-category-button .button-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Цифровые гайды</h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <img src="../../images/sun-icon.svg" alt="Светлая тема" class="icon icon-sun">
+            <img src="../../images/moon-icon.svg" alt="Тёмная тема" class="icon icon-moon">
+        </button>
+    </header>
+    
+    <main class="container">
+        <section class="section">
+            <div class="content">
+                <h2>Цифровые гайды</h2>
+                <p>Выберите категорию:</p>
+                
+                <div class="guide-categories">
+                    <!-- Кнопка Игры -->
+                    <a href="games/index.html" class="guide-category-button games">
+                        <div class="button-icon">
+                            <svg viewBox="0 0 24 24">
+                                <!-- Иконка джойстика -->
+                                <path d="M21 6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6zm-10 7H8v2H6v-2H4v-2h2V9h2v2h2v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                            </svg>
+                        </div>
+                        <div class="button-content">
+                            <h3>Игры</h3>
+                            <p>Гайды по игровым технологиям</p>
+                        </div>
+                        <div class="button-wave"></div>
+                    </a>
+                    
+                    <!-- Кнопка Приложения -->
+                    <a href="apps/index.html" class="guide-category-button apps">
+                        <div class="button-icon">
+                            <svg viewBox="0 0 24 24">
+                                <!-- Иконка приложений -->
+                                <path d="M16 11V5h4c1.1 0 2 .9 2 2v4h-6zm4 8c1.1 0 2-.9 2-2v-4h-6v6h4zM14 5v14H4c-1.1 0-2-.9-2-2v-4h6V5h6zM2 9V7c0-1.1.9-2 2-2h4v6H2z"/>
+                            </svg>
+                        </div>
+                        <div class="button-content">
+                            <h3>Приложения</h3>
+                            <p>Разработка мобильных приложений</p>
+                        </div>
+                        <div class="button-wave"></div>
+                    </a>
+                    
+                    <!-- Кнопка Программирование -->
+                    <a href="programming/index.html" class="guide-category-button programming">
+                        <div class="button-icon">
+                            <svg viewBox="0 0 24 24">
+                                <!-- Иконка пришельца -->
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2l-.5-6h3l-.5 6zm6 4h-2v-2h2v2zm0-4h-2l-.5-6h3l-.5 6z"/>
+                            </svg>
+                        </div>
+                        <div class="button-content">
+                            <h3>Программирование</h3>
+                            <p>Основы и продвинутые техники</p>
+                        </div>
+                        <div class="button-wave"></div>
+                    </a>
+                </div>
+                
+                <a href="../index.html" class="guide-button">← К списку гайдов</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Создатель и действующий владелец: Вика (tg: @VikkiDevPy). Все права защищены.</p>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+</body>
+</html>
